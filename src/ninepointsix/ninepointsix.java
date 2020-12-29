@@ -2,24 +2,18 @@ package ninepointsix;
 import java.util.Date;
 import java.util.Random;
 public class ninepointsix {
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int temp;
 		int min;
 		int i;
-		final int NUM = 100000;
-		
-		int[] number = new int[NUM];
+		final int NUMBER = 100000;
+		int[] number = new int[NUMBER];
 		Random random = new Random();
-		
-		for (i = 0; i < NUM; i++) {
+		for (i = 0; i < NUMBER; i++) {
 			number[i] = random.nextInt(100000);
 		}
-		
 		StopWatch stopWatch = new StopWatch();
-		
         for (i = 0; i < 100000; i++)
         {
             min = i;
@@ -27,22 +21,19 @@ public class ninepointsix {
                 if (number[j] < number[min]) {
                 	min = j;
                 }
-            temp        = number[min];
+            temp = number[min];
             number[min] = number[i];
-            number[i]   = temp;
+            number[i] = temp;
             }
         }
-		
 		stopWatch.stop();		
 		System.out.println(stopWatch.getElapsedTime() + "ms");		
 	}
 }
 
 class StopWatch {
-	
 	private Date startTime;
 	private Date endTime;
-	
 	public StopWatch() {
 		startTime = new Date();
 	}
@@ -66,7 +57,6 @@ class StopWatch {
 	public Date getEndTime() {
 		return endTime;
 	}
-	
 }
 	
 
